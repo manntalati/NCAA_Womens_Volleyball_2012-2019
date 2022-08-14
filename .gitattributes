@@ -1,0 +1,2 @@
+*.csv filter=lfs diff=lfs merge=lfs -text
+ncaa_w_boxscores_2012-2019.csv filter=lfs diff=lfs merge=lfs -text
