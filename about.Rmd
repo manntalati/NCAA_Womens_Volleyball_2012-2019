@@ -1,0 +1,23 @@
+---
+title: "About"
+description: |
+  Final Project of Kane’s Free High School Data Science Bootcamp
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+## About Me
+Hello! My name is Mann Talati and I am a current junior at Metea Valley High School. Some of my hobbies include playing volleyball, gaming, lifting weights, hanging with friends, and coding. Through the [Kanes Free High School Data Science Bootcamp](https://bootcamp.davidkane.info) I was able to make this website!
+
+## Contact Info
+Email: [manntalati@gmail.com](mann.talati@gmail.com)
+
+Linkedin: [manntalati](https://www.linkedin.com/in/mann-talati-5988011b9/)
+
+Github: [manntalati](https://github.com/manntalati)
+
+## About This Project
+One of my favorite hobbies includes playing volleyball which inspired me to take on this project. I love learning more about the sport of volleyball and learning statistics about them. Watching NCAA Women's Volleyball is amazing and learning extra facts about the sport. Coding with R is great because of the opportunities available with data science and expanding horizons.

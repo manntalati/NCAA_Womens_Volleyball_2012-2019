@@ -1,0 +1,157 @@
+---
+title: "NCAA Womens Volleyball Statistics"
+description: |
+  Below are the statistics across the entire NCAA Womens Volleyball Seasons from 2012-2019!
+site: distill::distill_website
+---
+## Introduction
+NCAA Women's Volleyball statistics vary greatly by team and the amount of wins that a team will achieve based on their statistics throughout the season. The data was from the ncaa_2012-2019 excel spreadsheet which contained data for all of the teams in NCAA Women's Volleyball. Then the data was filtered to take specific information about hitting, attacking and defending. It takes a large number of attack attempts for teams to secure a kill.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(ggthemes)
+library(plotly)
+library(stringr)
+library(distill)
+library(stringr)
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+# Learn more about publishing to GitHub Pages at:
+# https://rstudio.github.io/distill/publish_website.html#github-pages
+
+```
+## Basic Terms
+
+**Attacking** - When one attacks they are trying to hit the ball into the other court and achieve a point for their team
+
+**Kill** - Getting the point through the attack that they have achieved
+
+**Dig** - Receiving the attack that the other side tries to enforce onto the other court
+
+**Block** - Achieving a stop on the attack that the other side tries to turn into a kill.
+
+
+## Offense
+
+### Attack and Kills per Game 
+
+The graph below symbolizes the relationship between each team's attack attempts and each team's kills. As shown below there is a great number of attack attempts per kill. An attack attempt is when one goes up to attack/spike the ball down and fails while a kill means that they have successfully earned the point.
+
+```{r, attacks_kills}
+data <- read_csv("ncaa_w_boxscores_2012-2019.csv")
+vb_attack <- data |>
+  drop_na() |>
+  group_by(team) |>
+  summarise(avg_attempts = mean(attackAttempts), avg_kills = mean(kills)) |>
+  ggplot(mapping = aes(x = avg_attempts, 
+                       y = avg_kills, 
+                       color = team,
+                       text = paste("Attempts:", round(avg_attempts, 4), "\n", 
+                                    "Kills:", round(avg_kills, 4), "\n",
+                                    "Team:", str_to_title(team)))) +
+  geom_point() +
+  labs(x = "Attack Attempts", 
+       y = "Kills",
+       title = "Average Attack Attempts Per Women's NCAA Volleyball Team",
+       caption = "Source: Kaggle (Tyler Widdison; 2020)") +
+  theme(legend.position="none")
+
+
+ggplotly(vb_attack, tooltip = "text")
+
+```
+
+### Hitting Percentages
+The graph below shows the hitting percentage for the top 17 teams that have been the most successful at earning their kills based on their attack attempts. The highest percentage below is Southern NH that has one of the highest hitting percentage rates at close to 24%. 
+
+```{r, hitting_percentages}
+data |>
+  drop_na() |>
+  group_by(team) |>
+  summarise(avg_hitting = mean(hittingPercentage)) |>
+  filter(avg_hitting > 0.18) |>
+  ggplot(aes(y = avg_hitting, x = str_to_lower(team))) +
+  geom_jitter() +
+  theme(axis.text.x = element_text(angle=45, hjust=1)) + 
+  scale_y_continuous(labels = scales::percent) +
+  labs(x = "Team",
+       y = "Hitting Percentage",
+       title = "The Top 17 Hitting Percentage for Teams",
+       subtitle = "These 17 Volleyball Teams have been able to have the highest hitting percentages out of all of the\n NCAA Women's Volleyball Teams",
+       caption = "Source: Kaggle (Tyler Widdison; 2020)")
+```
+## Errors
+
+### Errors Per Team Per Game
+In the game of volleyball errors occur in many different type of ways some of these include attack errors, ball handling errors, blocking errors, reception errors, and service errors. The graph below shows all of the errors combined per team as a mean throughout a game. 
+
+```{r, errors}
+data2 <- data |>
+  drop_na() |>
+  group_by(team) |>
+  summarise(errors = mean(attackErrors + ballHandlingErrors + blockingErrors + receptionErrors + serviceErrors)) |>
+  arrange(desc(errors))
+
+errors <- data2 |>
+  ggplot() +
+  geom_bar(data = data2, mapping = aes(x = team, y = errors, fill = errors, text = paste("Errors:", round(errors, 4), "\n", "Team:", str_to_title(team))), stat = "identity", alpha = 0.5) +
+  labs(x = "Team",
+       y = "Errors",
+       title = "Errors Per Team",
+       caption = "Source: Kaggle (Tyler Widdison; 2020)") +
+  theme(legend.position="none", axis.text.x=element_blank(), axis.ticks.x=element_blank())
+
+
+ggplotly(errors, tooltip = "text")
+
+  
+```
+## Defense
+
+### Blocking
+
+Blocking is an important factor in volleyball and these 10 teams from the NCAA have been able to crush their solo blocks. Solo blocks occur when only one person goes up to perform the block and making it difficult to earn the point. The highest average solo block per game St-Thomas-TX which is still only just above 0.25.
+
+```{r, blocking}
+data |>
+  drop_na() |>
+  group_by(team) |>
+  summarise(avg_solo_block = mean(blockSolos)) |>
+  arrange(desc(avg_solo_block)) |>
+  slice_sample(n = 10) |>
+  ggplot(aes(x = team, y = avg_solo_block, color = "red")) +
+  geom_jitter() +
+  theme(legend.position="none", axis.text.x = element_text(angle=45, hjust=1)) +
+  labs(title = "Average Solo Blocks For The Top 10 Teams",
+       subtitle = "These teams have the highest number of solo blocks",
+       x = "Team",
+       y = "Average Solo Block",
+       caption = "Source: Kaggle (Tyler Widdison; 2020)")
+```
+
+### Digs
+
+Digs are an important aspect of the game because it allows the team to defend the other attack attempts and gain the opportunity to gain the point. The following graph is in regard to all of the players that participated in the game and started for the team. These 25 NCAA teams have 
+
+```{r, digs}
+data |>
+  drop_na() |>
+  group_by(team) |>
+  filter(started == "Y", participated == "Y") |>
+  summarise(avg_digs = mean(digs)) |>
+  slice_sample(n = 25) |>
+  ggplot(aes(x = team, y = avg_digs, color = avg_digs)) +
+  geom_point() +
+  theme(legend.position = "none", axis.text.x = element_text(angle=45, hjust=1)) +
+  labs(title = "Average Digs for 25 NCAA Teams",
+       subtitle  = "These digs are based on the starting six players on each team",
+       x = "Team",
+       y = "Average Digs",
+       caption = "Source: Kaggle (Tyler Widdison; 2020)")
+```
+
+## Summary
+
+As shown with the data above the number of NCAA Women's Teams have been able to accomplish a great number of things including putting up big attack numbers, defending numbers, and errors. These different statistics have been able to provide us with a great view of the data and the great amounts of achievements these teams have been able to accomplish. 
