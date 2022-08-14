@@ -1,0 +1,15 @@
+---
+title: "Primer.data"
+description: |
+  Dataset recieved from primer.data 
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Source B was Primer.data, it was flawless.
+
+

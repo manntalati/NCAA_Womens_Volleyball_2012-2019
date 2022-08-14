@@ -1,0 +1,17 @@
+---
+title: "NCAA Womens Volleyball boxscores 2012-2019"
+description: |
+  Kaggle dataset revolving around volleyball in 2012-2019 in NCAA Women's Volleyball
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Source A was the Kaggle dataset "NCAA Womens Volleyball boxscores 2012-2019," by Tyler Widdison.
+
+Link: https://www.kaggle.com/datasets/tylerwiddison/ncaa-womens-volleyball-boxscores-20122019?resource=download
+
+
