@@ -1,0 +1,40 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About",
+      "description": "Final Project of Kane’s Free High School Data Science Bootcamp\n",
+      "author": [],
+      "date": "`r Sys.Date()`",
+      "contents": "\r\nAbout Me\r\nHello! My name is Mann Talati and I am a current junior at Metea\r\nValley High School. Some of my hobbies include playing volleyball,\r\ngaming, lifting weights, hanging with friends, and coding. Through the\r\nKanes Free High School Data\r\nScience Bootcamp I was able to make this website!\r\nContact Info\r\nEmail: manntalati@gmail.com\r\nLinkedin: manntalati\r\nGithub: manntalati\r\nAbout This Project\r\nOne of my favorite hobbies includes playing volleyball which inspired\r\nme to take on this project. I love learning more about the sport of\r\nvolleyball and learning statistics about them. Watching NCAA Women’s\r\nVolleyball is amazing and learning extra facts about the sport. Coding\r\nwith R is great because of the opportunities available with data science\r\nand expanding horizons.\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-08-15T19:57:02-05:00"
+    },
+    {
+      "path": "index.html",
+      "title": "NCAA Women's Volleyball Statistics",
+      "description": "Below are the statistics across the entire NCAA Women's Volleyball Seasons from 2012-2019!\n",
+      "author": [],
+      "contents": "\r\nIntroduction\r\nNCAA Women’s Volleyball statistics revolve around offense and defense\r\nspecifically attacking and defending. The following data was recorded\r\nfrom the NCAA Women’s Volleyball stats from the 2012-2019 seasons and\r\nincorporated many different variables as shown in the excel spreadsheet.\r\nThe data was filtered down throughout the project in order to display\r\ndifferent importance for each specific topic. While several teams are\r\nable to attack the ball through their attack attempts there is a very\r\nlow chance of the team achieving the kill due to a block or a dig\r\nleaving the ratio of a kill to attack attempt close to 1:4 or 25% chance\r\nof achieving a kill.\r\nBasic Terms\r\nAttacking - When one attacks they are trying to hit\r\nthe ball into the other court and achieve a point for their team\r\nKill - Getting the point through the attack that\r\nthey have achieved\r\nDig - Receiving the attack that the other side tries\r\nto enforce onto the other court\r\nBlock - Achieving a stop on the attack that the\r\nother side tries to turn into a kill.\r\nOffense\r\nAttack and Kills per Game\r\nThe graph below symbolizes the relationship between each team’s\r\nattack attempts and each team’s kills. As shown below there is a great\r\nnumber of attack attempts per kill. An attack attempt is when one goes\r\nup to attack/spike the ball down and fails while a kill means that they\r\nhave successfully earned the point.\r\n\r\n\r\n\r\nHitting Percentages\r\nThe graph below shows the hitting percentage for the top 17 teams\r\nthat have been the most successful at earning their kills based on their\r\nattack attempts. The highest percentage below is Southern NH that has\r\none of the highest hitting percentage rates at close to 24%.\r\n\r\n\r\n\r\nErrors\r\nErrors Per Team Per Game\r\nIn the game of volleyball errors occur in many different type of ways\r\nsome of these include attack errors, ball handling errors, blocking\r\nerrors, reception errors, and service errors. The graph below shows all\r\nof the errors combined per team as a mean throughout a game.\r\n\r\n\r\n\r\nDefense\r\nBlocking\r\nBlocking is an important factor in volleyball and these 10 teams from\r\nthe NCAA have been able to crush their solo blocks. Solo blocks occur\r\nwhen only one person goes up to perform the block and making it\r\ndifficult to earn the point. The highest average solo block per game\r\nSt-Thomas-TX which is still only just above 0.25.\r\n\r\n\r\n\r\nDigs\r\nDigs are an important aspect of the game because it allows the team\r\nto defend the other attack attempts and gain the opportunity to gain the\r\npoint. The following graph is in regard to all of the players that\r\nparticipated in the game and started for the team. These 25 NCAA teams\r\nhave\r\n\r\n\r\n\r\nSummary\r\nAs shown with the data above the number of NCAA Women’s Teams have\r\nbeen able to accomplish a great number of things including putting up\r\nbig attack numbers, defending numbers, and errors. These different\r\nstatistics have been able to provide us with a great view of the data\r\nand the great amounts of achievements these teams have been able to\r\naccomplish.\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-08-15T20:02:43-05:00"
+    },
+    {
+      "path": "sourceA.html",
+      "title": "NCAA Womens Volleyball boxscores 2012-2019",
+      "description": "Kaggle dataset revolving around volleyball in 2012-2019 in NCAA Women's Volleyball\n",
+      "author": [],
+      "date": "`r Sys.Date()`",
+      "contents": "\r\nSource A was the Kaggle dataset “NCAA Womens Volleyball boxscores\r\n2012-2019,” by Tyler Widdison.\r\nLink: https://www.kaggle.com/datasets/tylerwiddison/ncaa-womens-volleyball-boxscores-20122019?resource=download\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-08-15T19:57:34-05:00"
+    },
+    {
+      "path": "sourceB.html",
+      "title": "Primer.data",
+      "description": "Dataset recieved from primer.data \n",
+      "author": [],
+      "date": "`r Sys.Date()`",
+      "contents": "\r\nSource B was Primer.data, it was flawless.\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-08-15T19:57:36-05:00"
+    }
+  ],
+  "collections": []
+}
