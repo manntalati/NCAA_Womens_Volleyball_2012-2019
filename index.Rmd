@@ -5,7 +5,7 @@ description: |
 site: distill::distill_website
 ---
 ## Introduction
-NCAA Women's Volleyball statistics vary greatly by team and the amount of wins that a team will achieve based on their statistics throughout the season. The data was from the ncaa_2012-2019 excel spreadsheet which contained data for all of the teams in NCAA Women's Volleyball. Then the data was filtered to take specific information about hitting, attacking and defending. It takes a large number of attack attempts for teams to secure a kill.
+NCAA Women's Volleyball statistics revolve around offense and defense specifically attacking and defending. The following data was recorded from the NCAA Women's Volleyball stats from the 2012-2019 seasons and incorporated many different variables as shown in the excel spreadsheet. The data was filtered down throughout the project in order to display different importance for each specific topic. While several teams are able to attack the ball through their attack attempts there is a very low chance of the team achieving the kill due to a block or a dig leaving the ratio of a kill to attack attempt close to 1:4 or 25% chance of achieving a kill. 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
