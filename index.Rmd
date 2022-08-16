@@ -1,7 +1,7 @@
 ---
-title: "NCAA Womens Volleyball Statistics"
+title: "NCAA Women's Volleyball Statistics"
 description: |
-  Below are the statistics across the entire NCAA Womens Volleyball Seasons from 2012-2019!
+  Below are the statistics across the entire NCAA Women's Volleyball Seasons from 2012-2019!
 site: distill::distill_website
 ---
 ## Introduction
