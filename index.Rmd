@@ -112,7 +112,7 @@ ggplotly(errors, tooltip = "text")
 
 ### Blocking
 
-Blocking is an important factor in volleyball and these 10 teams from the NCAA have been able to crush their solo blocks. Solo blocks occur when only one person goes up to perform the block and making it difficult to earn the point. The highest average solo block per game St-Thomas-TX which is still only just above 0.25.
+Blocking is an important factor in volleyball and these 10 teams from the NCAA have been able to crush their solo blocks. Solo blocks occur when only one person goes up to perform the block and making it difficult to earn the point. The highest average solo block per game is St-Thomas-TX.
 
 ```{r, blocking}
 data |>
@@ -133,7 +133,7 @@ data |>
 
 ### Digs
 
-Digs are an important aspect of the game because it allows the team to defend the other attack attempts and gain the opportunity to gain the point. The following graph is in regard to all of the players that participated in the game and started for the team. These 25 NCAA teams have 
+Digs are an important aspect of the game because it allows the team to defend the other attack attempts and gain the opportunity to gain the point. The following graph is in regard to all of the players that participated in the game and started for the team. 
 
 ```{r, digs}
 data |>
